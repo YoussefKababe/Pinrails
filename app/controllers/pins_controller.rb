@@ -7,6 +7,9 @@ class PinsController < ApplicationController
     @pins = Pin.all
   end
 
+  def about
+  end
+
   # GET /pins/1
   # GET /pins/1.json
   def show

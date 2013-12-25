@@ -1,6 +1,9 @@
 Pinrails::Application.routes.draw do
   resources :pins
 
+  root 'pins#index'
+  get 'about' => 'pins#about'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
