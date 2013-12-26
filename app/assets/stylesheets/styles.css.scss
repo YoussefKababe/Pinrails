@@ -1,1 +1,10 @@
-@import 'bootstrap'
+@import 'bootstrap';
+
+.field_with_errors { 
+  display: inline; 
+}
+
+footer {
+  margin-top: 80px;
+  display: block;
+}
