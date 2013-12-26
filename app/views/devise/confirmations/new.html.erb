@@ -1,12 +1,20 @@
 <h2>Resend confirmation instructions</h2>
 
-<%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
+<div class="clearfix">
+  <div class="well col-sm-4">
+    <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post, role: "form" }) do |f| %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+      <% resource.errors.full_messages.each do |msg| %>
+        <%= content_tag(:div, msg, class: "alert alert-danger") %>
+      <% end %>
 
-  <div><%= f.submit "Resend confirmation instructions" %></div>
-<% end %>
+      <div class="form-group <%= "has-error" if resource.errors[:name].any? %>">
+        <%= f.label :email, class: "control-label" %>
+        <%= f.email_field :email, :autofocus => true, class: "form-control" %>
+      </div>
 
-<%= render "devise/shared/links" %>
+      <%= f.submit "Resend confirmation instructions", class: "btn btn-primary" %>
+      <%= link_to "Cancel", root_path, class: "btn btn-default" %>
+    <% end %>
+  </div>
+</div>
