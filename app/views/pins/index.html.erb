@@ -1,4 +1,4 @@
-<%= render 'welcome' %>
+<%= render 'welcome' if !user_signed_in? %>
 <h1>Listing pins</h1>
 
 <table>

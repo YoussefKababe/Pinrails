@@ -7,7 +7,7 @@
         <% end %>
       <% end %>
 
-      <div class="form-group <%= "has-error" if @pin.errors.any? %>">
+      <div class="form-group <%= "has-error" if @pin.errors[:description].any? %>">
         <%= f.label :description, class: "control-label" %><br>
         <%= f.text_area :description, class: "form-control", size: "1x3"  %>
       </div>

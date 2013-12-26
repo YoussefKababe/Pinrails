@@ -2,7 +2,7 @@
   <h1>Welcome to Pinrails!</h1>
   <p>Here you can share pictures with the world.</p>
   <p>
-    <a href="#" class="btn btn-default btn-lg" role="button">Login</a>
-    <a href="#" class="btn btn-primary btn-lg" role="button">SignUp!</a>
+    <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary btn-lg" %>
+    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default btn-lg" %>
   </p>
 </div>
