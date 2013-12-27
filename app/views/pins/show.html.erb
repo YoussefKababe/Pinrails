@@ -1,9 +1,15 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @pin.description %>
-</p>
-
-<%= link_to 'Edit', edit_pin_path(@pin) %> |
-<%= link_to 'Back', pins_path %>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <div class="well">
+      <%= image_tag(@pin.image, class: "show-img") %>
+      <div class="caption">
+        <strong><%= @pin.user.name %></strong>
+        <p><%= @pin.description %></p>
+      </div>
+      <% if current_user == @pin.user %>
+        <%= link_to 'Edit', edit_pin_path(@pin), class: "btn btn-primary" %>
+        <%= link_to 'Remove', @pin, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -6,6 +6,11 @@
           <div class="alert alert-danger"><%= msg %></div>
         <% end %>
       <% end %>
+      
+      <div class="form-group <%= "has-error" if @pin.errors[:image].any? %>">
+        <%= f.label :image, "Upload an image", class: "control-label" %><br>
+        <%= f.file_field :image, class: "form-control" %>
+      </div>
 
       <div class="form-group <%= "has-error" if @pin.errors[:description].any? %>">
         <%= f.label :description, class: "control-label" %><br>
